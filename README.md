@@ -18,7 +18,7 @@ PROVIDER_URL = ''
 
 5. Configure your network in `hardhat.config.ts` as shown below:
 
-```json
+```
     const API_URL = process.env.PROVIDER_URL;
     const PRIVATE_KEY = process.env.PRIVATE_KEY;
     const config: HardhatUserConfig = {
