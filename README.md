@@ -45,5 +45,5 @@ For web3.js test:-
 
 ## Deployment
 
-`npx hardhat run script/deployEontToken.ethers.ts` --network <`name of network`>
-`npx hardhat run script/deployVendor.ethers.ts` --network <`name of network`>
+1. `npx hardhat run script/deployEontToken.ethers.ts` --network <`name of network`>
+2. `npx hardhat run script/deployVendor.ethers.ts` --network <`name of network`>
