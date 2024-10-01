@@ -1,13 +1,49 @@
-# Sample Hardhat Project
+# Token Vendor Project
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+## Project Description
 
-Try running some of the following tasks:
+This is a project that mint and vend ERC20 token. It allows a user to purchase and sell tokens.
+
+## Setup
+
+1. Fork the repository.
+2. Open your terminal and cd to the project directory.
+3. Run `yarn install` or `npm install` to install project dependecies.
+4. Create a .env file.
 
 ```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat ignition deploy ./ignition/modules/Lock.ts
+PRIVATE_KEY = ''
+PROVIDER_URL = ''
 ```
+
+5. Configure your network in `hardhat.config.ts` as shown below:
+
+```json
+    const API_URL = process.env.PROVIDER_URL;
+    const PRIVATE_KEY = process.env.PRIVATE_KEY;
+    const config: HardhatUserConfig = {
+    solidity: "0.8.27",
+    networks: {
+      hardhat: {},
+      sepolia: {
+        url: API_URL,
+        accounts: [`${PRIVATE_KEY}`],
+      },
+    },
+    };
+```
+
+6. Change the network settings to your network of choice.
+
+## Tests
+
+Run `npx hardhat test`.
+For web3.js test:-
+
+1. Run `npx hardhat node`.
+2. Run `npx hardhat test`.
+
+## Deployment
+
+`npx hardhat run script/deployEontToken.ethers.ts` --network <`name of network`>
+`npx hardhat run script/deployVendor.ethers.ts` --network <`name of network`>
